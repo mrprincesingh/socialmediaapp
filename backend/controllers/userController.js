@@ -1,9 +1,18 @@
-import {User } from "../model/userSechma.js"
+import {User} from "../model/userSechma.js"
 import { sendToken } from "../utils/SendToken.js";
 import { catchAsyncError } from "../utils/catchAsyncError.js";
 import ErrorHandler from "../utils/errorHandling.js";
 
 // Create a new user
+
+export const getAllUsers = catchAsyncError(async (req, res, next) => {
+  const users = await User.find({});
+  res.status(200).json({
+    success: true,
+    users,
+  });
+
+});
 export const createUser = catchAsyncError(async (req, res, next) => {
   const newUser = new User(req.body);
   
@@ -25,12 +34,14 @@ export const VerifyUser = catchAsyncError(async (req , res , next)=>{
 
     const user = await User.findOne({ email }).select("+password");
   if (!user) return next(new ErrorHandler("incorrect email or password", 401));
-  
+
   const isMatch = await user.comparePassword(password);
   if (!isMatch)
     return next(new ErrorHandler("incorrect email or password", 401));
   sendToken(res, user, `welcome back ${user.name}`, 200);
 })
+
+
 
 
   export const getUserById = catchAsyncError(async (req, res, next) => {

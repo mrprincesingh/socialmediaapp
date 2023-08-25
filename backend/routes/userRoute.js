@@ -1,8 +1,8 @@
 import express from "express";
-import { VerifyUser, createUser, deleteUserById, getTopActiveUsers, getTotalUsers, getUserById, updateUserById } from "../controllers/userController.js";
+import { VerifyUser, createUser, deleteUserById, getAllUsers, getTopActiveUsers, getTotalUsers, getUserById, updateUserById } from "../controllers/userController.js";
 const router = express.Router();
 
-
+router.route("/getuser").get(getAllUsers)
 // Create a new user
 router.route('/users').post(createUser);
 //Verify User

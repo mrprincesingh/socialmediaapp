@@ -5,13 +5,22 @@ import ErrorHandler from "../utils/errorHandling.js";
 const router = express.Router();
 // Create a new post
 
+export const getAllPost = catchAsyncError(async (req, res, next) => {
+  const posts = await Post.find({});
+  res.status(200).json({
+    success: true,
+    posts,
+  });
+
+});
+
 export const createPost = catchAsyncError(async (req, res, next) => {
   const userId = req.user.id;
   req.body.user = userId;
     const newPost = new Post(req.body);
     const savedPost = await newPost.save();
     res.status(201).json(savedPost);
-    
+
   });
   
   // Retrieve a post by id

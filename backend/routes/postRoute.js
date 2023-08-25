@@ -1,7 +1,9 @@
 import express from "express";
-import { createPost, deletePostById, getPostById, getTopLikedPosts, getTotalPosts, likePostById, unlikePostById, updatePostById } from "../controllers/postController.js";
+import { createPost, deletePostById, getAllPost, getPostById, getTopLikedPosts, getTotalPosts, likePostById, unlikePostById, updatePostById } from "../controllers/postController.js";
 import { isAuthenticated } from "../Authenticate/isAuth.js";
 const router = express.Router();
+
+router.route("/getpost").get(getAllPost)
 
 router.route('/posts').post(createPost , isAuthenticated);
 
