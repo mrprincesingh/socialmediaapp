@@ -36,7 +36,7 @@ const SinglePost = () => {
   };
 
   return (
-    <Box p={4} w="20%"  borderWidth="1px" m="auto" borderRadius="lg" boxShadow="md">
+    <Box p={4} w="50%" bg="azure"   borderWidth="1px" m="auto" mt="100px"  borderRadius="lg" boxShadow="md">
       {loading ? (
         <Spinner size="lg" />
       ) : post ? (

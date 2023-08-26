@@ -33,6 +33,7 @@ const authToken = 'your_authentication_token';
 
     console.log('Response from createPost API:', response.data); // Log the response data
     dispatch({ type: types.CREATE_POST_SUCCESS, payload: response.data });
+    window.location.reload()
   } catch (error) {
     console.error('Error in createPost API:', error); // Log any errors
     dispatch({ type: types.CREATE_POST_FAIL });

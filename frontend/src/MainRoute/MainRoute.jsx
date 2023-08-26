@@ -8,6 +8,7 @@ import SinglePost from '../Pages/SinglePost'
 import EditPost from '../Pages/EditPost'
 import TopLikedPosts from '../Pages/TopLikedPosts '
 import User from '../Pages/User'
+import SingleUserPage from '../Pages/SingleUserPage'
 
 const MainRoute = () => {
   return (
@@ -18,6 +19,7 @@ const MainRoute = () => {
     <Route path="/posts/:id/edit"  element={<EditPost/>} />
     <Route path="/analytics/posts/top-liked"  element={<TopLikedPosts/>} />
     <Route path="/analytics/users"  element={<User/>} />
+    <Route path="/users/:id" element={<SingleUserPage/>}/>
 
    </Routes>
   )

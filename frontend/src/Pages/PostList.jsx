@@ -14,7 +14,7 @@ import axios from "axios";
 
 const PostList = ({ posts }) => {
   const [likes, setLikes] = useState({});
-  const [dislikes, setDislikes] = useState({});
+  const [dislikes, setDislikes] = useState(0);
 
   const handleLike = (postId, event) => {
     event.preventDefault(); 
@@ -28,11 +28,13 @@ const PostList = ({ posts }) => {
   };
 
   const handleDislike = (postId, event) => {
-    event.preventDefault(); // Prevent the link's navigation
-    axios.post(`https://socialbackend.vercel.app/api/posts/${postId}/undislike`) // Use the new undislike endpoint
+    event.preventDefault();
+    axios
+      .post(`https://socialbackend.vercel.app/api/posts/${postId}/unlike`) // Updated API endpoint
       .then((response) => {
         // Update the dislikes state to reflect the new dislike count
-        setDislikes({ ...dislikes, [postId]: response.data.dislikes });
+        setDislikes({ ...dislikes, [postId]: response.data.dislikes }); // Use response.data.dislikes
+        window.location.reload()
       })
       .catch((error) => {
         console.error("Error disliking post:", error);

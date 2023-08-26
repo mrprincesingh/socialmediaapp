@@ -90,6 +90,14 @@ const User = () => {
                   <Text color="black" cursor="pointer">
                     Email: {user.email}
                   </Text>
+                  <Link to={`/users/${user._id}`}>
+                      <IconButton
+                        icon={<FaEdit />}
+                        colorScheme="blue"
+                        aria-label="Edit"
+                        size="sm"
+                      />
+                    </Link>
                
                   <IconButton
                     icon={<FaTrash />}
