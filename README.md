@@ -87,8 +87,8 @@
 
 mermaid
 graph TD;
-    App-->Create User
-    HomePage-->View Post page;
+    App-->CreateUser;
+    HomePage-->ViewPostpage;
       SignUpPage-->loginPage;
        loginPage-->HomePage;
        HomePage --> DeshboardPage
