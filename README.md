@@ -88,12 +88,15 @@
 ```mermaid
 graph TD;
     App-->HomePage
-    HomePage-->SignUpPage;
-      SignUpPage-->loginPage;
-       loginPage-->HomePage;
-       HomePage --> DeshboardPage
-       DeshboardPage-->LeaderBoardPage
-       DeshboardPage-->HomePage
+    HomePage-->ViewPostPage;
+      HomePage-->ViewPost;
+       ViewPost-->UpdatePost;
+       ViewPost -->deletePost;
+       HomePage-->CreatePost;
+       HomePage-->MostLinkedPost;
+       HomePage-->UserPage;
+       UserPage-->DeleteUser;
+       UserPage-->updateUser
      
 ```
 ---
