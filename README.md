@@ -85,7 +85,7 @@
 
 ## Flow
 
-mermaid
+```mermaid
 graph TD;
     App-->HomePage
     HomePage-->SignUpPage;
@@ -95,7 +95,7 @@ graph TD;
        DeshboardPage-->LeaderBoardPage
        DeshboardPage-->HomePage
      
-
+```
 ---
 
 
