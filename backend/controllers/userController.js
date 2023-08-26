@@ -41,7 +41,20 @@ export const VerifyUser = catchAsyncError(async (req , res , next)=>{
   sendToken(res, user, `welcome back ${user.name}`, 200);
 })
 
-
+export const logout = catchAsyncError(async (req, res, next) => {
+  res
+    .status(200)
+    .cookie("token", null, {
+      expires: new Date(Date.now()),
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    })
+    .json({
+      success: true,
+      message: "Logged Out Successfully",
+    });
+});
 
 
   export const getUserById = catchAsyncError(async (req, res, next) => {

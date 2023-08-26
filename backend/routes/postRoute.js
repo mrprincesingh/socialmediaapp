@@ -17,10 +17,10 @@ router.route('/posts/:id').put( updatePostById,isAuthenticated);
 router.route('/posts/:id').delete( deletePostById,isAuthenticated);
 
 // Increment the like count of a post by id (requires authentication)
-router.route('/posts/:id/like').post(likePostById,isAuthenticated);
+router.route('/posts/:id/like').post(likePostById);
 
 // Decrement the like count of a post by id (not below 0)
-router.route('/posts/:id/unlike').post(unlikePostById,isAuthenticated);
+router.route('/posts/:id/unlike').post(unlikePostById);
 
 // Retrieve the total number of posts
 router.route('/analytics/posts').get(getTotalPosts);

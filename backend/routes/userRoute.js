@@ -1,5 +1,5 @@
 import express from "express";
-import { VerifyUser, createUser, deleteUserById, getAllUsers, getTopActiveUsers, getTotalUsers, getUserById, updateUserById } from "../controllers/userController.js";
+import { VerifyUser, createUser, deleteUserById, getAllUsers, getTopActiveUsers, getTotalUsers, getUserById, logout, updateUserById } from "../controllers/userController.js";
 const router = express.Router();
 
 router.route("/getuser").get(getAllUsers)
@@ -7,6 +7,8 @@ router.route("/getuser").get(getAllUsers)
 router.route('/users').post(createUser);
 //Verify User
 router.route('/verifyusers').post(VerifyUser)
+
+router.route("/logout").get(logout)
 // Retrieve a user by id
 router.route('/users/:id').get(getUserById);
 
