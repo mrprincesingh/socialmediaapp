@@ -1,11 +1,13 @@
-import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import userReducer from './reducer';
+import userPost from './PostRedux/reducer';
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  post: userPost,
 });
 
-const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

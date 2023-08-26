@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Import the CSS
 const Create = () => {
    const [name , SetName] = useState("")
    const [email, setEmail] = useState("");
-   const [password, setPass] = useState("");
+   
    const [bio , setBio] = useState("")
    const navigate = useNavigate();
    const {createAccount ,isError} = useSelector((state) => state.user);
@@ -21,9 +21,9 @@ const Create = () => {
    
      if (createAccount === true) {
      
-       toast.success("Signup Success!");
+       toast.success("User created Success!");
        setTimeout(() => {
-         navigate("/verifyuser");
+         navigate("/create");
        
        }, 5000);
      }
@@ -42,18 +42,18 @@ const Create = () => {
       signupfunc({
         name:name,
         email: email,
-        password: password,
+  
         bio:bio
       })
     );
 
     SetName("")
     setEmail("");
-    setPass("");
+   
     setBio("")
   };
   const handlegotologinup = ()=>{
-    navigate("/verifyuser")
+    navigate("/create")
   }
     
   return (
@@ -78,18 +78,6 @@ const Create = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </FormControl>
-        <FormControl mt="10px" isRequired>
-          <FormLabel>Create Password</FormLabel>
-          <Input
-            placeholder="Create Password"
-            value={password}
-            type="password"
-            onChange={(e) => setPass(e.target.value)}
-          />
-          <Text fontSize="xs">
-            Password must have more than 6 characters.
-          </Text>
-        </FormControl>
        
         <FormControl mt="10px">
           <FormLabel>Bio</FormLabel>
@@ -102,10 +90,7 @@ const Create = () => {
         <Button mt="10px" colorScheme="blue" onClick={handleSignup}>
           Submit
         </Button>
-        <Box onClick={handlegotologinup}>
-  <h1>Already have an account click here to Verify</h1>
-<Button colorScheme="red">Verify User</Button>
-</Box>
+       
       </Container>
 
       <ToastContainer position="top-right" /></>

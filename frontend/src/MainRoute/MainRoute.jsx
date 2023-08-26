@@ -4,13 +4,21 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Create from '../Pages/Create'
 import VerifyUser from '../Pages/VerifyUser'
+import SinglePost from '../Pages/SinglePost'
+import EditPost from '../Pages/EditPost'
+import TopLikedPosts from '../Pages/TopLikedPosts '
+import User from '../Pages/User'
 
 const MainRoute = () => {
   return (
    <Routes>
-    <Route path="/"  element={<Home/>} />
-    <Route path="/create"  element={<Create/>} />
-    <Route path="/verifyuser"  element={<VerifyUser/>} />
+    <Route path="/create"  element={<Home/>} />
+    <Route path="/"  element={<Create/>} />
+    <Route path="/posts/:id"  element={<SinglePost/>} />
+    <Route path="/posts/:id/edit"  element={<EditPost/>} />
+    <Route path="/analytics/posts/top-liked"  element={<TopLikedPosts/>} />
+    <Route path="/analytics/users"  element={<User/>} />
+
    </Routes>
   )
 }

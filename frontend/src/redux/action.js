@@ -63,10 +63,13 @@ export const signupfunc = ({
 export const loginfunc = ({ email,  password }) => (dispatch) => {
   dispatch(get_login_request());
   axios
-    .post("https://socialbackend.vercel.app/api/verifyusers", {  email:email, password:password } )
+    .post("https://socialbackend.vercel.app/api/verifyusers", {   email,password })
     .then((res) => {
       console.log(res);
       dispatch(get_login_success(res));
     })
-    .catch((err) => dispatch(get_login_Error()));
-};
+    .catch((err) => {
+      console.log(err);
+      dispatch(get_login_Error(err));
+});
+}

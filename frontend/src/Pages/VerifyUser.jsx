@@ -8,17 +8,20 @@ import { loginfunc } from '../redux/action';
 
 const VerifyUser = () => {
   const {isAuth} = useSelector((state) => state.user);
+  console.log(isAuth)
   const [email, setEmail] = useState("");
    const [password, setPass] = useState("");
    const navigate = useNavigate();
    const dispatch = useDispatch()
+
+
    const handleSignup = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       toast.error("Please provide both Email and Password.");
       return;
     }
-
+   
     dispatch(loginfunc(email ,password ))
  if(isAuth){
     toast.success("Login successful!");

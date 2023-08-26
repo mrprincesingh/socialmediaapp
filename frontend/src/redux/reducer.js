@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         isLoad: false,
         isError: false,
         userdata: payload,
-        isAuth: false,
+        isAuth: true,
         createAccount: true,
       };
     case CREATE_USER_FAIL:
