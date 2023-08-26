@@ -18,3 +18,32 @@
 
 
 <br>
+
+---
+## 💫Tech-Stack->
+
+- #### For Frontend :-
+   - `HTML5`
+  - `CSS3`
+  - `JavaScript `
+   - `Redux`
+  - `ReactJS`
+   - `ES6 `
+
+- #### For Backend :-
+   - `NodeJS`
+   - `ExpressJS`
+    - `MongoDB `
+- #### For deploy database :- 
+    
+     - `Vercel`
+   
+
+- #### For Styling :-  
+   - `Chakra UI `
+   
+
+- #### For live Project : -
+   - `Vercel`
+
+
