@@ -31,6 +31,7 @@ const authToken = 'your_authentication_token';
 
     const response = await axios.post('https://socialbackend.vercel.app/api/posts', requestData);
 
+
     console.log('Response from createPost API:', response.data); // Log the response data
     dispatch({ type: types.CREATE_POST_SUCCESS, payload: response.data });
     window.location.reload()
